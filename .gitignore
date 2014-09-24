@@ -1,0 +1,20 @@
+# -*- mode: gitignore; -*-
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Compile Grammar images
+*.dat
+*.grm
+
+# PDF files
+*.pdf
+
+# output files
+*.out
+
