@@ -1,3 +1,4 @@
+rm -f parser/* tm/* generator/*
 mkdir -p parser
 mkdir -p tm
 mkdir -p generator
