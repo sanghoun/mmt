@@ -19,16 +19,30 @@ do
 	TARGET=$(echo $LINE | cut -d2 -f2)
 	LINE_NUM=0
 	
-	while read SENTENCE
-	do	
-		LINE_NUM=$(expr $LINE_NUM + 1)
-		if test -e tm/$LINE.dat
-		then 
-		    echo $SENTENCE | ace -g parser/$SOURCE.dat 2>/dev/null | ace -g tm/$LINE.dat 2>/dev/null | ace -g generator/$TARGET.dat -e 2>/dev/null > outputs/$LINE.$LINE_NUM.out
-		else
-		    echo $SENTENCE | ace -g parser/$SOURCE.dat 2>/dev/null | ace -g generator/$TARGET.dat -e 2>/dev/null > outputs/$LINE.$LINE_NUM.out		    
-		fi
+	if [ $2 ]
+	then 
+		while read SENTENCE
+		do	
+			LINE_NUM=$(expr $LINE_NUM + 1)
+			if test -e tm/$LINE.dat
+			then 
+			    echo $SENTENCE | ace -g parser/$SOURCE.dat -n $2 2>/dev/null | ace -g tm/$LINE.dat -n $2 2>/dev/null | ace -g generator/$TARGET.dat -e -n $2 2>/dev/null > outputs/$LINE.$LINE_NUM.out
+			else
+			    echo $SENTENCE | ace -g parser/$SOURCE.dat -n $2 2>/dev/null | ace -g generator/$TARGET.dat -e -n $2 2>/dev/null > outputs/$LINE.$LINE_NUM.out		    
+			fi
 
-	done < $1/$SOURCE.txt
-	
+		done < $1/$SOURCE.txt
+	else
+		while read SENTENCE
+		do	
+			LINE_NUM=$(expr $LINE_NUM + 1)
+			if test -e tm/$LINE.dat
+			then 
+			    echo $SENTENCE | ace -g parser/$SOURCE.dat 2>/dev/null | ace -g tm/$LINE.dat 2>/dev/null | ace -g generator/$TARGET.dat -e 2>/dev/null > outputs/$LINE.$LINE_NUM.out
+			else
+			    echo $SENTENCE | ace -g parser/$SOURCE.dat 2>/dev/null | ace -g generator/$TARGET.dat -e 2>/dev/null > outputs/$LINE.$LINE_NUM.out		    
+			fi
+
+		done < $1/$SOURCE.txt
+	fi
 done < pairs 

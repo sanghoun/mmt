@@ -18,7 +18,7 @@ fi
 python scripts/make_pairs.py > pairs
 python scripts/cleanup.py
 
-./mmt.sh $1
+./mmt.sh $@
 
 python scripts/make_tbl_empty.py | python scripts/create_tbl.py > pdf/tbl_empty.tex
 python scripts/make_tbl_parse-success.py | python scripts/create_tbl.py > pdf/tbl_parse-success.tex
@@ -71,3 +71,4 @@ fi
 
 rm -f log.tmp
 rm -f temp.tmp
+
