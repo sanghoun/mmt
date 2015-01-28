@@ -1,0 +1,64 @@
+
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{pgfplots}
+\makeatletter
+\tikzset{nomorepostaction/.code=\let\tikz@postactions\pgfutil@empty}
+\makeatother
+\definecolor{myblack}{HTML}{111111}
+\definecolor{mywhite}{HTML}{FFFFFF}
+\definecolor{mygrey}{HTML}{C8C8C8}
+\begin{document}
+\begin{tikzpicture}
+
+\begin{axis}[width=6in, height=4in, 
+ybar=2*\pgflinewidth, major x tick style = transparent, ymajorgrids = true, scaled y ticks = false, 
+symbolic x coords={
+eng, jpn, zhs, zht, yue, ind
+}, ymin=0, 
+ymax=107, legend cell align=left, legend style={at={(0.99,0.01)}, anchor=south east, column sep=1ex}, xtick=data]
+\addplot[style={bar width=0.12in,fill=mygrey,draw=black}] coordinates {
+(eng,107)
+(jpn,0)
+(zhs,0)
+(zht,0)
+(yue,0)
+(ind,0)
+};
+\addplot[style={bar width=0.12in,fill=white,every path/.style={postaction={nomorepostaction,pattern=north east lines, pattern color=black}},draw=black}] coordinates {
+(eng,45)
+(jpn,98)
+(zhs,0)
+(zht,0)
+(yue,0)
+(ind,0)
+};
+\addplot[style={bar width=0.12in,fill=myblack,draw=black}] coordinates {
+(eng,0)
+(jpn,0)
+(zhs,92)
+(zht,9)
+(yue,0)
+(ind,0)
+};
+\addplot[style={bar width=0.12in,fill=mywhite,draw=black}] coordinates {
+(eng,0)
+(jpn,0)
+(zhs,11)
+(zht,51)
+(yue,0)
+(ind,0)
+};
+\addplot[style={bar width=0.12in,fill=white,every path/.style={postaction={nomorepostaction,pattern=west east lines, pattern color=black}},draw=black}] coordinates {
+(eng,0)
+(jpn,0)
+(zhs,0)
+(zht,0)
+(yue,10)
+(ind,0)
+};
+
+
+\end{tikzpicture}
+\end{document}
+

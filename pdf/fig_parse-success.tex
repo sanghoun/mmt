@@ -1,0 +1,31 @@
+
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{pgfplots}
+\makeatletter
+\tikzset{nomorepostaction/.code=\let\tikz@postactions\pgfutil@empty}
+\makeatother
+\definecolor{myblack}{HTML}{111111}
+\definecolor{mywhite}{HTML}{FFFFFF}
+\definecolor{mygrey}{HTML}{C8C8C8}
+\begin{document}
+\begin{tikzpicture}
+
+\begin{axis}[symbolic x coords={
+eng, jpn, zhs, zht, yue, ind
+}, ymin=0, 
+ymax=107, xtick=data]
+\addplot[ybar,fill=black] coordinates {
+(eng, 107)
+(jpn, 100)
+(zhs, 94)
+(zht, 54)
+(yue, 10)
+(ind, 9)
+};
+\end{axis}
+
+
+\end{tikzpicture}
+\end{document}
+

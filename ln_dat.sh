@@ -6,14 +6,16 @@ rm -rf tm/*
 
 ln -s $ENG_PAR parser/eng.dat
 ln -s $JPN_PAR parser/jpn.dat
-ln -s $HANS_PAR parser/hans.dat
-ln -s $HANT_PAR parser/hant.dat
+ln -s $ZHS_PAR parser/zhs.dat
+ln -s $ZHT_PAR parser/zht.dat
+ln -s $YUE_PAR parser/yue.dat
 ln -s $IND_PAR parser/ind.dat
 
 ln -s $ENG_GEN generator/eng.dat
 ln -s $JPN_GEN generator/jpn.dat
-ln -s $HANS_GEN generator/hans.dat
-ln -s $HANT_GEN generator/hant.dat
+ln -s $ZHS_GEN generator/zhs.dat
+ln -s $ZHT_GEN generator/zht.dat
+ln -s $YUE_GEN generator/yue.dat
 ln -s $IND_GEN generator/ind.dat
 
 if [ "$ENG2ENG" != "" ]; then
@@ -24,12 +26,12 @@ if [ "$ENG2JPN" != "" ]; then
     ln -s $ENG2JPN tm/eng2jpn.dat
 fi
 
-if [ "$ENG2HANS" != "" ]; then
-    ln -s $ENG2HANS tm/eng2hans.dat
+if [ "$ENG2ZHS" != "" ]; then
+    ln -s $ENG2ZHS tm/eng2zhs.dat
 fi
 
-if [ "$ENG2HANT" != "" ]; then
-    ln -s $ENG2HANT tm/eng2hant.dat
+if [ "$ENG2ZHT" != "" ]; then
+    ln -s $ENG2ZHT tm/eng2zht.dat
 fi
 
 if [ "$ENG2IND" != "" ]; then
@@ -45,12 +47,12 @@ if [ "$JPNJPN" != "" ]; then
     ln -s $JPN2JPN tm/jpn2jpn.dat
 fi
 
-if [ "$JPN2HANS" != "" ]; then
-    ln -s $JPN2HANS tm/jpn2hans.dat
+if [ "$JPN2ZHS" != "" ]; then
+    ln -s $JPN2ZHS tm/jpn2zhs.dat
 fi
 
-if [ "$JPN2HANT" != "" ]; then
-    ln -s $JPN2HANT tm/jpn2hant.dat
+if [ "$JPN2ZHT" != "" ]; then
+    ln -s $JPN2ZHT tm/jpn2zht.dat
 fi
 
 if [ "$JPN2IND" != "" ]; then
@@ -58,44 +60,44 @@ if [ "$JPN2IND" != "" ]; then
 fi
 
 
-if [ "$HANS2ENG" != "" ]; then
-    ln -s $HANS2ENG tm/hans2eng.dat
+if [ "$ZHS2ENG" != "" ]; then
+    ln -s $ZHS2ENG tm/zhs2eng.dat
 fi
 
-if [ "$HANS2JPN" != "" ]; then
-    ln -s $HANS2JPN tm/hans2jpn.dat
+if [ "$ZHS2JPN" != "" ]; then
+    ln -s $ZHS2JPN tm/zhs2jpn.dat
 fi
 
-if [ "$HANS2HANS" != "" ]; then
-    ln -s $HANS2HANS tm/hans2hans.dat
+if [ "$ZHS2ZHS" != "" ]; then
+    ln -s $ZHS2ZHS tm/zhs2zhs.dat
 fi
 
-if [ "$HANS2HANT" != "" ]; then
-    ln -s $HANS2HANT tm/hans2hant.dat
+if [ "$ZHS2ZHT" != "" ]; then
+    ln -s $ZHS2ZHT tm/zhs2zht.dat
 fi
 
-if [ "$HANS2IND" != "" ]; then
-    ln -s $HANS2IND tm/hans2ind.dat
+if [ "$ZHS2IND" != "" ]; then
+    ln -s $ZHS2IND tm/zhs2ind.dat
 fi
 
-if [ "$HANT2ENG" != "" ]; then
-    ln -s $HANT2ENG tm/hant2eng.dat
+if [ "$ZHT2ENG" != "" ]; then
+    ln -s $ZHT2ENG tm/zht2eng.dat
 fi
 
-if [ "$HANT2JPN" != "" ]; then
-    ln -s $HANT2JPN tm/hant2jpn.dat
+if [ "$ZHT2JPN" != "" ]; then
+    ln -s $ZHT2JPN tm/zht2jpn.dat
 fi
 
-if [ "$HANT2HANS" != "" ]; then
-    ln -s $HANT2HANS tm/hant2hans.dat
+if [ "$ZHT2ZHS" != "" ]; then
+    ln -s $ZHT2ZHS tm/zht2zhs.dat
 fi
 
-if [ "$HANT2HANT" != "" ]; then
-    ln -s $HANT2HANT tm/hant2hant.dat
+if [ "$ZHT2ZHT" != "" ]; then
+    ln -s $ZHT2ZHT tm/zht2zht.dat
 fi
 
-if [ "$HANT2IND" != "" ]; then
-    ln -s $HANT2IND tm/hant2ind.dat
+if [ "$ZHT2IND" != "" ]; then
+    ln -s $ZHT2IND tm/zht2ind.dat
 fi
 
 if [ "$IND2ENG" != "" ]; then
@@ -106,12 +108,12 @@ if [ "$INDJPN" != "" ]; then
     ln -s $IND2JPN tm/ind2jpn.dat
 fi
 
-if [ "$IND2HANS" != "" ]; then
-    ln -s $IND2HANS tm/ind2hans.dat
+if [ "$IND2ZHS" != "" ]; then
+    ln -s $IND2ZHS tm/ind2zhs.dat
 fi
 
-if [ "$IND2HANT" != "" ]; then
-    ln -s $IND2HANT tm/ind2hant.dat
+if [ "$IND2ZHT" != "" ]; then
+    ln -s $IND2ZHT tm/ind2zht.dat
 fi
 
 if [ "$IND2IND" != "" ]; then
